@@ -72,7 +72,7 @@ let main argv =
             printfn "Client connected to input socket"
             printfn "Sending data"
             use writer = new StreamWriter(inputServer)
-            do! writer.WriteLineAsync("Hello world!") |> Async.AwaitTask
+            do! writer.WriteLineAsync("Monadic Party 2018") |> Async.AwaitTask
             do! writer.FlushAsync() |> Async.AwaitTask
         }
     
