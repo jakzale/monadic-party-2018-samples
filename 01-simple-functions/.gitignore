@@ -1,0 +1,9 @@
+# Ignore dotnet files
+[Bb]in
+[Oo]bj
+
+# Ingore Azurite files
+__blobstorage__
+__azurite_db_blob__.json
+__azurite_db_table__.json
+
