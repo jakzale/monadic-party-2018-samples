@@ -13,14 +13,15 @@ open System.Diagnostics.Tracing
 [<CLIMutable>]
 type Person = {
     name: string
+    age: int
 }
 
 [<FunctionName("SampleHttpTrigger")>]
 let run ([<HttpTrigger(AuthorizationLevel.Anonymous)>]person: Person, log: TraceWriter) =
     log.Info("Processing a HTTP request")
 
-    person.name
-    |> sprintf "Hello, %s!"
+    
+    sprintf "Hello, %s aged %d!" (person.name) (person.age)
     |> OkObjectResult
 
 [<FunctionName("SampleQueueProducer")>]

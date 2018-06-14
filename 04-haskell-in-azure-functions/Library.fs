@@ -23,8 +23,8 @@ type Person = {
 let haskellRun (name: string) =
     printfn "Creating a named pipe"
         
-    let inputSocketName = "input"
-    let outputSocketName = "output"
+    let inputSocketName = "input" + (Guid.NewGuid().ToString())
+    let outputSocketName = "output" + (Guid.NewGuid().ToString())
     
     use inputServer = new NamedPipeServerStream(inputSocketName)
     let inputPath = socketPathFromName inputSocketName
